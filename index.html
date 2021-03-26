@@ -9,6 +9,26 @@
     <title>vue-todolist</title>
 </head>
 <body>
+    <div id="root">
+        <!-- Main -->
+        <main>
+            <div class="todo-wrapper">
+                <div class="todo-list">
+                    <ul>
+                        <li v-for="(task, index) in tasks">
+                            {{ task }}
+                            <button @click="deleteTask(index)">remove</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <input @keyup.13="addTask" v-model="newTask" type="text" placeholder="Inserisci nuova task">
+                <button @click="addTask">Add</button>
+            </div>
+        </main>
+        <!-- /Main -->
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
