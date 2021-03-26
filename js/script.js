@@ -29,9 +29,9 @@ var vm = new Vue(
         data: {
             tasks: 
             [
-                "Svolgere esercizio to-do list utilizzando Vue.js",
-                "Riscrivere i concetti base appresi a lezione",
-                "Studiare documentazione Vue.js"
+                'Per aggiungere altri elementi scrivere nella sezione sotto e premere il pulsante "add" o il tasto invio della tastiera',
+                'Per rimuovere un elemento premere il pulsante "done"',
+                "In altro a destra è indicato il numero di task attive"
             ],
             newTask: "",
             time: time,

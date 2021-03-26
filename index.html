@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>vue-todolist</title>
 </head>
@@ -15,32 +19,32 @@
             <!-- Header -->
             <header>
                 <div class="date">
-                    <p>{{ weekday[time.getDay()] }}, </p>
-                    <p>{{ time.getDate() }}th</p>
-                    <p class="small">{{ month[time.getMonth()] }}</p>
+                    <p class="p--date"><strong>{{ weekday[time.getDay()] }}</strong></p>
+                    <p class="p--date">{{ time.getDate() }}th</p>
+                    <p>{{ month[time.getMonth()] }}</p>
                 </div>
                 <div class="counter">
                     <p> {{ tasks.length }} Tasks</p>
                 </div>
             </header>
             <!-- /Header -->
-
             <!-- Main -->
             <main>
                 <div class="todo-list">
                     <ul>
                         <li v-for="(task, index) in tasks">
-                            {{ task }}
-                            <button @click="deleteTask(index)">done </button>
+                            <button @click="deleteTask(index)">
+                                <img src="img/Tick Square.png" alt="Tick icon">
+                            </button>
+                            <p>{{ task }}</p>
                         </li>
-                    </ul>
+                    </ul> 
                 </div>
             </main>
             <!-- /Main -->
-
             <!-- Footer -->
             <footer>
-                <input @keyup.13="addTask" v-model="newTask" type="text" placeholder="Inserisci nuova task">
+                <input @keyup.13="addTask" v-model="newTask" type="text" placeholder="What do you have to do?">
                 <button @click="addTask">Add</button>
             </footer>
             <!-- /  Footer -->
